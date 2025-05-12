@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Live Color Box</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #f0f4f8, #d9e2ec);
+    }
+    .container {
+      text-align: center;
+      background: white;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    }
+    #colorBox {
+      width: 200px;
+      height: 200px;
+      background-color: gray;
+      border-radius: 16px;
+      margin: 0 auto 30px;
+      transition: background-color 0.3s ease;
+    }
+    input {
+      padding: 10px 15px;
+      font-size: 16px;
+      width: 220px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    input:focus {
+      border-color: #007bff;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div id="colorBox"></div>
+    <input type="text" id="colorInput" placeholder="Type a color name..." />
+  </div>
+
+  <script>
+    const colorInput = document.getElementById('colorInput');
+    const colorBox = document.getElementById('colorBox');
+
+    colorInput.addEventListener('input', () => {
+      colorBox.style.backgroundColor = colorInput.value.trim();
+    });
+  </script>
+
+</body>
+</html>
